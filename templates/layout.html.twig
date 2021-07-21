@@ -1,15 +1,17 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-    {# {{ parent() }}
+    {{ parent() }}
     {{ encore_entry_link_tags('footer') }}
-    {{ encore_entry_link_tags('navbar') }} #}
+    {{ encore_entry_link_tags('navbar') }}
 {% endblock %}
 
-{# {% block navbar %} {% include 'component/_navbar.html.twig' %} {% endblock %} #}
+{% block navbar %}
+    {% include 'component/_navbar.html.twig' %}
+{% endblock %}
 
 {% block body %}{% endblock %}
 
 {% block footer %}
-    {# {% include "includes/_footer.html.twig" %} #}
+    {% include "component/_footer.html.twig" %}
 {% endblock %}

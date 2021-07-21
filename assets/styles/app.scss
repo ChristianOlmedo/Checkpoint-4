@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 
-body {
-    background-color: red;
-}
+$navbarBackground: #080019;
+$primary: #FCAE67;
+$fontFamilly: 'Piedra', cursive;
+$footerBackground: #231F20;

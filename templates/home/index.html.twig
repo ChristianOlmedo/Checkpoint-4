@@ -1,9 +1,67 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Into The Wild | Accueil{% endblock %}
+{% block title %}Into The Wild | Accueil
+{% endblock %}
 {% block stylesheets %}
-	{{ parent() }}
+    {{ parent() }}
     {{ encore_entry_link_tags('home') }}
 {% endblock %}
 {% block body %}
+    <section class="d-flex justify-content-center">        
+        <div class="row text-center">
+            <h1 class="title my-5">INTO THE WILD</h1>
+            <h2 class="sub-title my-5">LIBÈRE TON CÔTÉ SAUVAGE AUPRÈS DE</br>PASSIONNÉS DE JEUX VIDÉO</h2>
+        </div>
+    </section>
+    <section>
+        <div class="container text-center">
+            <div class="row align-items-start justify-content-center">
+                <div class="col-4">
+                    <img class="icon" src="{{ asset('build/images/beer.svg') }}" alt="Bière"/>
+                    <p class="sub-sub-title my-5">UNE CARTE D'ENFER</br></br></br></p>
+                    <p class="description">Viens entre amis</br>déguster de bonnes</br>bières où goûter à nos</br>super sandwichs !</p>
+                </div>
+                <div class="col-4">
+                    <img class="icon" src="{{ asset('build/images/joystick.svg') }}" alt="Manette"/>
+                    <p class="sub-sub-title my-5">UN PANEL DE JEU</br>INÉGALABLE</br></br></p>
+                    <p class="description">Des jeux rétrogaming</br>aux dernières consoles</br>modernes, viens te</br>mesurer à des joueurs</br>passionnés !</p>
+                </div>
+                <div class="col-4">
+                    <img class="icon" src="{{ asset('build/images/agenda.svg') }}" alt="Calendrier"/>
+                    <p class="sub-sub-title my-5">DES ÉVÈNEMENTS</br>TOUTES LES</br>SEMAINES</p>
+                    <p class="description">Du try-hard sur League</br>of Legends à la soirée</br>chill Just Dance, nous</br>organisons tout type</br> d'évènements tout au</br>long de l'année !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{ asset('build/images/nintendo.jpg') }}" class="card-img-top" alt="Nintendo">
+                            <div class="card-body">
+                                <p class="card-text">Des tournois de Mario Kart 8 Deluxe organisés tous les mois avec des lots à gagner !</p>
+                            </div>
+                    </div>                
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{ asset('build/images/retrogaming.jpg') }}" class="card-img-top" alt="RetroGaming">
+                            <div class="card-body">
+                                <p class="card-text">Du retrogaming pour tous les âges, viens jouer avec une Atari 2600 ou une Nintendo 64 !</p>
+                            </div>
+                    </div>                
+                </div>
+                <div class="col-4 d-flex justify-content-center">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{ asset('build/images/fortnite.jpg') }}" class="card-img-top" alt="Fortnite">
+                            <div class="card-body">
+                                <p class="card-text">Des tournois de jeux multijoueurs toutes les semaines, ramènes tes potes et éclatent tes adversaires !</p>
+                            </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

@@ -1,0 +1,33 @@
+@import "./assets/styles/app.scss";
+
+.section-footer {
+    background-color: $footerBackground;
+}
+
+.navlink {
+    color: $primary;
+    font-family: $fontFamilly;
+}
+
+.img-logo {
+    height: 70px;
+    width: 70px;
+}
+
+.section-footer h2 {
+    font-size: 1.8em;
+    transition: 0.3s;
+}
+
+.section-footer h2:hover {
+    color: lighten(rgb(255, 255, 255), 10%);
+}
+
+.footer {
+    height: 100px;
+}
+
+.network-logo {
+    height: 40px;
+    width: 40px;
+}

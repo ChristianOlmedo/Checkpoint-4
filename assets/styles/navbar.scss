@@ -1,0 +1,28 @@
+@import "./assets/styles/app.scss";
+
+.section-navbar {
+    background-color: $navbarBackground;
+}
+
+.navlink {
+    color: $primary;
+    font-family: $fontFamilly;
+}
+
+.img-logo {
+    height: 70px;
+    width: 70px;
+}
+
+.section-navbar h2 {
+    font-size: 1.8em;
+    transition: 0.3s;
+}
+
+.section-navbar h2:hover {
+    color: lighten(rgb(255, 255, 255), 10%);
+}
+
+.nav {
+    height: 100px;
+}

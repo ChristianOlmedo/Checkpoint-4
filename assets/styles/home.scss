@@ -1,1 +1,36 @@
 @import "./assets/styles/app.scss";
+
+.title {
+    color: $primary;
+    font-family: $fontFamilly;
+    font-size: 3em;
+}
+
+.sub-title {
+    color: $primary;
+    font-family: $fontFamilly;
+    font-size: 1.8em;
+}
+
+.sub-sub-title {
+    color: $primary;
+    font-family: $fontFamilly;
+    font-size: 1.5em;
+}
+
+body {
+    background: url(/assets/images/fondloup.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.description {
+    color: $primary;
+    font-size: 1em;
+    font-family: "Roboto", sans-serif;
+}
+
+.icon {
+    height: 200px;
+    width: 200px;
+}
