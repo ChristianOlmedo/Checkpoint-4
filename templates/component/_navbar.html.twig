@@ -5,8 +5,12 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
         <a class="nav-link" aria-current="page" href="#"><h2 class="navlink">NOTRE CARTE</h2></a>
-        <a class="nav-link" href="#"><h2 class="navlink">ÉVÈNEMENTS</h2></a>
+        <a class="nav-link" href="{{ path('event') }}"><h2 class="navlink">ÉVÈNEMENTS</h2></a>
         <a class="nav-link" href="#"><h2 class="navlink">FAQ</h2></a>
-        <a class="nav-link" href="#"><h2 class="navlink">CONNEXION</h2></a>
+        {% if app.user %}
+            <a class="nav-link" href="{{ path('app_logout') }}"><h2 class="navlink">{{ app.user.nickname }} DÉCONNEXION</h2></a>
+        {% else %}
+            <a class="nav-link" href="{{ path('app_login') }}"><h2 class="navlink">CONNEXION</h2></a>
+        {% endif %}
     </nav>
 </section>
