@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Into The Wild | Admin | Évènements
+{% block title %}Into The Wild | Admin | Menu
 {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
@@ -9,7 +9,7 @@
 {% block body %}
     <section class="d-flex justify-content-center">
         <div class="row text-center">
-            <h1 class="title my-5">VOIR LES ÉVÈNEMENTS</h1>
+            <h1 class="title my-5">VOIR DANS LE MENU</h1>
         </div>
     </section>
     <div>
@@ -19,23 +19,23 @@
                     <th>Id</th>
                     <th>Nom</th>
                     <th>Description</th>
-                    <th>Date de l'évènement</th>
+                    <th>Prix</th>
                     <th>Image</th>
-                    <th>Limite</th>
+                    <th>Categorie</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ event.id }}</td>
-                    <td>{{ event.Name }}</td>
-                    <td>{{ event.Description }}</td>
-                    <td>{{ event.Date ? event.Date|date('Y-m-d H:i:s') : '' }}€</td>
-                    <td>{{ event.Image }}</td>
-                    <td>{{ event.UserLimit }}</td>
+                    <td>{{ menu.id }}</td>
+                    <td>{{ menu.Name }}</td>
+                    <td>{{ menu.Description }}</td>
+                    <td>{{ menu.price }}€</td>
+                    <td>{{ menu.Image }}</td>
+                    <td>{{ menu.category.name }}</td>
                     <td>
-                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
-                        {{ include('admin_event/_delete_form.html.twig') }}
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ menu.id) }}">
+                        {{ include('admin_menu/_delete_form.html.twig') }}
                     </td>
                 </tr>
             </tbody>

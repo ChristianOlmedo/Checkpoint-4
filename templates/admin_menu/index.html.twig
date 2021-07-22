@@ -1,0 +1,60 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Into The Wild | Admin | Menu
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+{% block body %}
+    <section class="d-flex justify-content-center">
+        <div class="row text-center">
+            <h1 class="title my-5">AJOUT DANS LE MENU</h1>
+        </div>
+    </section>
+    <div>
+        <table class="table sub-title">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Image</th>
+                    <th>Categorie</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for menu in menus %}
+                    <tr>
+                        <td>{{ menu.id }}</td>
+                        <td>{{ menu.Name }}</td>
+                        <td>{{ menu.Description }}</td>
+                        <td>{{ menu.price }}€</td>
+                        <td>{{ menu.Image }}</td>
+                        <td>{{ menu.category.name }}</td>
+                        <td>
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ menu.id) }}">
+                            <a class="btn btn-danger" href="{{ path('admin_menu_delete', {'id': menu.id}) }} ">Supprimer</a>
+                            <a class="btn btn-success" href="{{ path('admin_menu_edit', {'id': menu.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Aucun menu enregistré</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a class="btn btn-dark my-5" href="{{ path('admin_menu_new') }}">
+                <h2 class="sub-title">Ajouter au menu</h2>
+            </a>
+            <a class="btn btn-dark my-5" href="{{ path('admin') }}">
+                <h2 class="sub-title">Retourner à l'accueil Admin</h2>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+ 

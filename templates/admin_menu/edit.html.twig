@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Into The Wild | Admin | Évènements
+{% block title %}Into The Wild | Admin | Menu
 {% endblock %}
 {% block stylesheets %}
     {{ parent() }}
@@ -8,9 +8,9 @@
 {% endblock %}
 {% block body %}
     <section class="col-lg-3 text-center">
-        {{ include('admin_event/_form.html.twig', {'button_label': 'Modifier'}) }}
+        {{ include('admin_menu/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-        <a class="btn btn-dark mb-2" href="{{ path('admin_event_index') }}">
+        <a class="btn btn-dark mb-2" href="{{ path('admin_menu_index') }}">
             <h2 class="sub-sub-title">Retour</h2>
         </a>
     </section>
