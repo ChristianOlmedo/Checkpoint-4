@@ -13,24 +13,24 @@
             <h2 class="sub-title my-5">LIBÈRE TON CÔTÉ SAUVAGE AUPRÈS DE</br>PASSIONNÉS DE JEUX VIDÉO</h2>
     </div>
 </section>
-<section class="container justify-content-center">
-    {% for menu in menus %}
-        <div class="row text-center">
-            <div class="col-3">
+<section class="container">
+    <div class="row text-center justify-content-center m-5">
+        {% for menu in menus %}
+            <div class="menu col-3">
                 <img class="menu-img" src="{{ vich_uploader_asset(menu) }}" alt="{{ menu.Image }}">
             </div>
-            <div class="col-4 d-flex align-items-center justify-content-center sub-title">
-                <p>{{ menu.Name }}</p>
+            <div class="menu col-4 d-flex align-items-center justify-content-center sub-title">
+                <p class="menu-name">{{ menu.Name }}</p>
             </div>
-            <div class="col-4 d-flex align-items-center justify-content-center sub-sub-title">
-                <p>{{ menu.Description }}</p>
+            <div class="menu col-4 d-flex align-items-center justify-content-center sub-sub-title">
+                <p class="menu-description">{{ menu.Description }}</p>
             </div>
-            <div class="col-1 d-flex align-items-center justify-content-center sub-sub-title">
+            <div class="menu col-1 d-flex align-items-center justify-content-center sub-sub-title">
                 <p>{{ menu.price }}€</p>
             </div>
         {% else %}
             <p>Aucun menu enregistré</p>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

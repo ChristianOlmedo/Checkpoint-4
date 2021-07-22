@@ -24,8 +24,8 @@
         </div>
     {% endif %}
 
-    <div class="col-lg-3 mx-5 mt-5 text-center">
-        <h1 class="title h3 mb-3 font-weight-normal">Connecte toi !</h1>
+    <div class="col-lg-3 col-10 offset-1 mx-5 mt-5 text-center">
+        <h1 class="title h3 mb-3 font-weight-normal text-center">Connecte toi !</h1>
         <label class="sub-sub-title" for="inputEmail">Email</label>
         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
         <label class="sub-sub-title" for="inputPassword">Mot de passe</label>
@@ -38,13 +38,11 @@
                 <input type="checkbox" name="_remember_me"> Se souvenir de moi !
             </label>
         </div>
-   
-
         <button class="connexion btn btn-lg btn-dark my-5" type="submit">
-            <h2 class="sub-title">Connexion</h2>
+            <h2 class="sub-sub-title">Connexion</h2>
         </button>
         <a href="{{ path('app_register') }}" class="connexion btn btn-lg btn-dark my-5" type="submit">
-            <h2 class="sub-title">Pas encore inscrit ?</h2>
+            <h2 class="sub-sub-title">Pas encore inscrit ?</h2>
         </a>
     </div>
 </form>
