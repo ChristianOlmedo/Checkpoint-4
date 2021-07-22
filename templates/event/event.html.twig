@@ -14,21 +14,29 @@
         </div>
     </section>
     <section>
-        <div class="accordion" id="accordionPanelsStayOpenExample">
+    {% for event in events %}
+        <div class="accordion m-5" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
-                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                <h2 class="sub-title accordion-header" id="panelsStayOpen-headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        Accordion Item #1
+                        <h2 class="sub-title">{{ event.Name }} organisé le {{ event.Date ? event.Date|date('d-m-Y à H:i') : '' }}</h2>
                     </button>
                 </h2>
+                
                 <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong>
-                        It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the
-                        <code>.accordion-body</code>, though the transition does limit overflow.
+                    <div class="accordion-body sub-sub-title"> 
+                        Description de l'évènement: {{ event.Description }}
+                        {{ event.Image }}
+                        </br>Nombre limite de participant: {{ event.UserLimit }}
+                        <a class="btn btn-dark"><h3 class="sub-sub-title">S'inscrire à l'évènement !</h3></a>
                     </div>
                 </div>
+                {% else %}
+                        <p>Aucun évènement enregistré</p>
+               
             </div>
         </div>
-    </section>
+    {% endfor %}
+    </section> 
+    
 {% endblock %}

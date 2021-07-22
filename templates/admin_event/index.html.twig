@@ -1,0 +1,59 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Into The Wild | Admin | Évènements
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('home') }}
+{% endblock %}
+{% block body %}
+    <section class="d-flex justify-content-center">
+        <div class="row text-center">
+            <h1 class="title my-5">AJOUT D'ÉVÈNEMENTS</h1>
+        </div>
+    </section>
+    <div>
+        <table class="table sub-title">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Date de l'évènement</th>
+                    <th>Image</th>
+                    <th>Limite</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event.id }}</td>
+                        <td>{{ event.Name }}</td>
+                        <td>{{ event.Description }}</td>
+                        <td>{{ event.Date ? event.Date|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ event.Image }}</td>
+                        <td>{{ event.UserLimit }}</td>
+                        <td>
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
+                            <a class="btn btn-danger" href="{{ path('admin_event_delete', {'id': event.id}) }} ">Supprimer</a>
+                            <a class="btn btn-success" href="{{ path('admin_event_edit', {'id': event.id}) }}">Modifier</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">Aucun évènement enregistré</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a class="btn btn-dark my-5" href="{{ path('admin_event_new') }}">
+                <h2 class="sub-title">Ajouter nouvel évènement</h2>
+            </a>
+            <a class="btn btn-dark my-5" href="{{ path('admin') }}">
+                <h2 class="sub-title">Retourner à l'accueil Admin</h2>
+            </a>
+        </div>
+    </div>
+{% endblock %}
