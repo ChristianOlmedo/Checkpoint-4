@@ -51,7 +51,7 @@ class UserFixtures extends Fixture
 
         $admin->setLastname('admin');
 
-        $admin->setNickname('admin');
+        $admin->setNickname('WaneVeal');
 
         $admin->setRoles(['ROLE_ADMIN']);
 

@@ -8,9 +8,13 @@
         <a class="nav-link" href="{{ path('event') }}"><h2 class="navlink">ÉVÈNEMENTS</h2></a>
         <a class="nav-link" href="#"><h2 class="navlink">FAQ</h2></a>
         {% if app.user %}
+            {% if is_granted("ROLE_ADMIN") %}
+            <a class="nav-link" href="{{ path('admin') }}"><h2 class="navlink">ADMIN</h2></a>
+            {% endif %}
             <a class="nav-link" href="{{ path('app_logout') }}"><h2 class="navlink">{{ app.user.nickname }} DÉCONNEXION</h2></a>
-        {% else %}
-            <a class="nav-link" href="{{ path('app_login') }}"><h2 class="navlink">CONNEXION</h2></a>
+            {% else %}
+        <a class="nav-link" href="{{ path('app_login') }}"><h2 class="navlink">CONNEXION</h2></a>
         {% endif %}
+        
     </nav>
 </section>
