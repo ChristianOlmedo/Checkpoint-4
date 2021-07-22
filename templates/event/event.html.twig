@@ -37,13 +37,13 @@
                             <div>
                                 <!-- Button trigger modal -->
                                 {% if app.user %}
-                                <button type="button" class="btn btn-dark my-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <h3 class="sub-sub-title">S'inscrire à l'évènement !</h3>
-                                </button>
+                                    <button type="button" class="btn btn-dark my-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        <h3 class="sub-sub-title">S'inscrire à l'évènement !</h3>
+                                    </button>
                                 {% else %}
-                                <a href="{{ path('app_login') }}" class="btn btn-dark my-5">
-                                    <h3 class="sub-sub-title">S'inscrire à l'évènement !</h3>
-                                </a>
+                                    <a href="{{ path('app_login') }}" class="btn btn-dark my-5">
+                                        <h3 class="sub-sub-title">S'inscrire à l'évènement !</h3>
+                                    </a>
                                 {% endif %}
                             </div>
                             <!-- Modal -->
@@ -51,15 +51,24 @@
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Inscription pour {{ event.name }}</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Inscription pour
+                                                {{ event.name }}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            Tu souhaites t'inscrire à l'évènement {{ event.name }} et botter des fesses ?
+                                            Tu souhaites t'inscrire à l'évènement
+                                            {{ event.name }}
+                                            et botter des fesses ?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">En fait non...</button>
                                             <button type="button" class="btn btn-primary">Oui !</button>
+                                            {# {{ form_start(form) }}
+                                            {{ form_widget(form) }}
+                                            <button class="btn btn-dark mt-4">
+                                                <h2 class="sub-sub-title">{{ button_label|default('Enregistrer') }}</h2>
+                                            </button>
+                                            {{ form_end(form) }} #}
                                         </div>
                                     </div>
                                 </div>
@@ -73,8 +82,7 @@
                 </div>
             </div>
         </div>
-        {% else %}
+    {% else %}
         <p>Aucun évènement enregistré</p>
     {% endfor %}
-</section>
-{% endblock %}
+</section>{% endblock %}

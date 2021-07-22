@@ -46,6 +46,33 @@ body {
 }
 
 .menu-img {
-    width: auto;
+    width: 200px;
     height: 200px;
+}
+
+.form-label {
+    width: 500px;
+}
+
+.form-control {
+    width: 500px;
+}
+
+@media screen and (max-width: 992px) {
+    .menu-img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .menu-name, .menu-description {
+        font-size: 0.6em;
+    }
+
+    .form-label {
+        width: 300px;
+    }
+    
+    .form-control {
+        width: 300px;
+    }
 }
