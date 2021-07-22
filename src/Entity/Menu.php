@@ -4,9 +4,15 @@ namespace App\Entity;
 
 use App\Repository\MenuRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation\Uplodable;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=MenuRepository::class)
+ * @Vich\Uploadable
  */
 class Menu
 {
@@ -31,6 +37,16 @@ class Menu
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="image_file", fileNameProperty="image")
+     * @Assert\File(
+     *         maxSize = "1M",
+     *         mimeTypes = {"image/jpeg", "image/png", "image/webp", "image/svg"},
+     * )
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="integer")
@@ -106,5 +122,16 @@ class Menu
         $this->category = $category;
 
         return $this;
+    }
+
+    public function setImageFile(File $image = null): Menu
+    {
+        $this->imageFile = $image;
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

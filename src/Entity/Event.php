@@ -4,9 +4,15 @@ namespace App\Entity;
 
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
+ * @Vich\Uploadable
  */
 class Event
 {
@@ -36,6 +42,16 @@ class Event
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $Image;
+
+    /**
+     * @Vich\UploadableField(mapping="image_file", fileNameProperty="image")
+     * @Assert\File(
+     *   maxSize = "1M",
+     *   mimeTypes = {"image/jpeg", "image/png", "image/webp", "image/svg"},
+     * )
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="integer")
@@ -105,5 +121,16 @@ class Event
         $this->UserLimit = $UserLimit;
 
         return $this;
+    }
+
+    public function setImageFile(File $image = null): Event
+    {
+        $this->imageFile = $image;
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

@@ -1,9 +1,5 @@
 @import "./assets/styles/app.scss";
 
-.section-navbar {
-    background-color: $navbarBackground;
-}
-
 .navlink {
     color: $primary;
     font-family: $fontFamilly;
@@ -25,4 +21,8 @@
 
 .nav {
     height: 100px;
+}
+
+.username {
+    color: rgb(255, 193, 122);
 }

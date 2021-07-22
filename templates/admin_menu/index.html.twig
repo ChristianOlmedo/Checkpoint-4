@@ -32,7 +32,9 @@
                         <td>{{ menu.Name }}</td>
                         <td>{{ menu.Description }}</td>
                         <td>{{ menu.price }}€</td>
-                        <td>{{ menu.Image }}</td>
+                        <td>
+                            <img class="menu-img" src="{{ vich_uploader_asset(menu) }}" alt="{{ menu.Image }}">
+                        </td>
                         <td>{{ menu.category.name }}</td>
                         <td>
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ menu.id) }}">
@@ -57,4 +59,3 @@
         </div>
     </div>
 {% endblock %}
- 

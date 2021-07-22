@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\EventRepository;
+use App\Repository\MenuRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -32,7 +32,9 @@
                         <td>{{ event.Name }}</td>
                         <td>{{ event.Description }}</td>
                         <td>{{ event.Date ? event.Date|date('Y-m-d H:i:s') : '' }}</td>
-                        <td>{{ event.Image }}</td>
+                        <td>
+                            <img class="menu-img" src="{{ vich_uploader_asset(event) }}" alt="{{ event.Image }}">
+                        </td>
                         <td>{{ event.UserLimit }}</td>
                         <td>
                             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ event.id) }}">
